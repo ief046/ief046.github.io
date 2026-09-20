@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="巴士游戏大全，提供模拟驾驶、交通管理与策略类巴士游戏的在线试玩与攻略。包含巴士模拟器、公交经营模拟等热门游戏推荐与下载指南。">
+    <meta name="keywords" content="巴士游戏, 模拟驾驶游戏, 公交车模拟, 交通管理, 网页游戏">
+    <title>巴士游戏-热门模拟驾驶与交通管理游戏大全</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --accent-hover: #2980b9;
+            --bg-light: #f4f7f6;
+            --text-main: #333;
+            --text-secondary: #666;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Category Filter */
+        .filter-bar {
+            background: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background: #fff;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* Game Grid */
+        .game-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .game-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 20px;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-tag {
+            font-size: 12px;
+            color: var(--accent-color);
+            background: rgba(52, 152, 219, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            align-self: flex-start;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .game-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .game-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .rating {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #fff;
+            padding: 60px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--accent-color);
+            font-size: 28px;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            background: #fff;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ecf0f1;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .game-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🚌</span> BusGame
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">模拟驾驶</a>
+                <a href="#">交通管理</a>
+                <a href="#">下载中心</a>
+                <a href="#">排行榜</a>
+            </nav>
+            <button class="search-btn">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>体验真实的巴士驾驶乐趣</h1>
+                <p>从繁忙的城市街道到复杂的山区公路，在巴士游戏中体验掌控大型交通工具的快感。无论是模拟经营还是极限挑战，这里都有适合你的驾驶体验。</p>
+                <a href="#games" class="cta-button">开始游戏</a>
+            </div>
+        </section>
+
+        <section class="filter-bar">
+            <div class="container">
+                <div class="filter-list">
+                    <button class="filter-btn active">全部游戏</button>
+                    <button class="filter-btn">模拟驾驶</button>
+                    <button class="filter-btn">交通管理</button>
+                    <button class="filter-btn">赛车竞速</button>
+                    <button class="filter-btn">经营模拟</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="games" class="game-section">
+            <div class="container">
+                <h2 class="section-title">热门巴士游戏推荐</h2>
+                
+                <div class="game-grid">
+                    <!-- Game 1 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus1/400/300" alt="City Bus Simulator">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">模拟驾驶</span>
+                            <h3 class="game-title">城市巴士模拟器</h3>
+                            <p class="game-desc">在逼真的3D城市环境中驾驶公交车，完成每日路线，管理乘客，体验真实驾驶手感。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.8</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game 2 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus2/400/300" alt="Bus Parking Master">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">停车挑战</span>
+                            <h3 class="game-title">巴士停车大师</h3>
+                            <p class="game-desc">考验你的空间感和操控技巧，在各种狭窄路段将巴士精准停入指定车位。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.5</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game 3 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus3/400/300" alt="Bus Traffic Control">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">交通管理</span>
+                            <h3 class="game-title">交通路口指挥官</h3>
+                            <p class="game-desc">扮演交通指挥员，控制红绿灯，疏导车流，避免城市交通瘫痪。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.6</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game 4 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus4/400/300" alt="Offroad Bus">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">越野驾驶</span>
+                            <h3 class="game-title">越野巴士大冒险</h3>
+                            <p class="game-desc">在泥泞的山路和崎岖的地形中驾驶巴士，克服重重困难到达终点。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.7</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game 5 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus5/400/300" alt="Bus Route Manager">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">经营策略</span>
+                            <h3 class="game-title">公交路线规划师</h3>
+                            <p class="game-desc">规划最优的公交路线，收购车辆，雇佣司机，打造最完善的公共交通网络。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.4</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Game 6 -->
+                    <article class="game-card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/bus6/400/300" alt="School Bus Driver">
+                            <div class="play-overlay">
+                                <div class="play-icon">▶</div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <span class="game-tag">休闲</span>
+                            <h3 class="game-title">校车接送员</h3>
+                            <p class="game-desc">温和的校车驾驶体验，准时接送学生上下学，感受为人师表的驾驶责任。</p>
+                            <div class="card-footer">
+                                <span class="rating">⭐ 4.3</span>
+                                <span>Web版</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🎮</div>
+                        <h3 class="feature-title">无需下载</h3>
+                        <p class="feature-text">所有巴士游戏均基于浏览器运行，点击即可开始，无需安装客户端。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3 class="feature-title">高清画质</h3>
+                        <p class="feature-text">采用先进的WebGL技术，呈现细腻的车辆模型和逼真的城市景观。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌍</div>
+                        <h3 class="feature-title">全球社区</h3>
+                        <p class="feature-text">与全球玩家分享你的驾驶技巧，参与排行榜挑战，展示你的驾驶天赋。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">巴士游戏需要什么配置？</div>
+                    <div class="faq-answer">大多数网页版巴士游戏只需普通电脑或手机浏览器即可流畅运行，对硬件要求较低。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">如何控制游戏中的巴士？</div>
+                    <div class="faq-answer">通常使用键盘的WASD或方向键控制转向和加速，Space键刹车。部分游戏支持鼠标操作。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">支持移动端游玩吗？</div>
+                    <div class="faq-answer">是的，本站提供的巴士游戏均支持触摸屏操作，您可以在手机和平板上直接游玩。</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">游戏数据会保存吗？</div>
+                    <div class="faq-answer">部分支持排行榜的竞技类游戏数据会实时同步，单人模式通常在当前会话中保存。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>BusGame</h3>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.6;">
+                        专注于提供高质量、无需下载的网页巴士模拟游戏体验。让您随时随地体验驾驶乐趣。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>游戏分类</h3>
+                    <ul>
+                        <li><a href="#">模拟驾驶</a></li>
+                        <li><a href="#">交通管理</a></li>
+                        <li><a href="#">停车挑战</a></li>
+                        <li><a href="#">赛车竞速</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <ul>
+                        <li><a href="#">网站介绍</a></li>
+                        <li><a href="#">联系合作</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 BusGame.com. 保留所有权利. 本站内容仅供娱乐参考。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) child.classList.remove('active');
+                });
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Filter Button Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // In a real app, this would filter the game grid
+            });
+        });
+    </script>
+</body>
+</html>
