@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="基辅电视塔附近爆炸事件实时资讯、现场报道、事故原因及后续影响分析。提供最新军事冲突动态、人道主义救援进展及安全警示信息。">
+    <meta name="keywords" content="基辅电视塔附近爆炸,乌克兰局势,基辅轰炸,基辅电视塔,俄乌冲突最新消息">
+    <title>基辅电视塔附近爆炸-乌克兰局势实时追踪与深度分析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d32f2f;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        /* Breaking News Ticker */
+        .ticker-wrap {
+            background-color: #fff;
+            border-bottom: 1px solid var(--border-color);
+            overflow: hidden;
+            height: 36px;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-label {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0 12px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            flex-shrink: 0;
+        }
+
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        .ticker-item {
+            padding: 0 24px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Main Content */
+        main {
+            padding: 32px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero-article {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            height: 400px;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+        }
+
+        .hero-article img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-article:hover img {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 32px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 4px;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .hero-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .live-indicator {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-time {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            min-width: 60px;
+            text-align: right;
+            padding-top: 2px;
+        }
+
+        .timeline-content {
+            border-left: 2px solid var(--border-color);
+            padding-left: 12px;
+        }
+
+        .timeline-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Section Layout */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+            width: 40px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
+        }
+
+        /* Facts & Safety Section */
+        .safety-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 48px;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .safety-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .safety-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #ccc;
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            max-width: 300px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-article {
+                height: 250px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span class="logo-icon"></span>
+            <span>冲突观察室</span>
+        </a>
+        <nav class="nav-links">
+            <a href="#" class="active">实时新闻</a>
+            <a href="#">战况地图</a>
+            <a href="#">深度分析</a>
+            <a href="#">人道援助</a>
+            <a href="#">历史档案</a>
+        </nav>
+    </div>
+</header>
+
+<div class="ticker-wrap">
+    <div class="ticker-label">突发</div>
+    <div class="ticker">
+        <div class="ticker-item">【最新】基辅市军事管理部门发布通告，电视塔区域已解除封锁，但建议居民保持警惕。</div>
+        <div class="ticker-item">【更新】无人机袭击后，基辅市中心部分交通信号灯恢复供电。</div>
+        <div class="ticker-item">【现场】救援人员正在对电视塔周边受损设施进行评估。</div>
+        <div class="ticker-item">【官方】基辅市长强调基础设施的韧性，并表示将加快修复进度。</div>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <article class="hero-article">
+            <img src="https://picsum.photos/seed/kyiv1/800/600" alt="基辅城市全景">
+            <div class="hero-content">
+                <span class="hero-tag">最新动态</span>
+                <h1 class="hero-title">基辅电视塔附近爆炸事件最新进展与现场直击</h1>
+                <div class="hero-meta">
+                    <span>2023年10月24日 14:30</span>
+                    <span>•</span>
+                    <span>深度报道</span>
+                </div>
+            </div>
+        </article>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-title">
+                    <span>时间线</span>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">14:00</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">基辅电视塔周边解除封锁</div>
+                        <div class="timeline-desc">当局宣布安全评估完成，允许救援车辆通行。</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">13:45</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">无人机残骸坠落</div>
+                        <div class="timeline-desc">多架无人机在电视塔附近空域被击落。</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">13:30</div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">初步爆炸报告</div>
+                        <div class="timeline-desc">基辅军事管理部门确认电视塔附近发生爆炸。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <div class="sidebar-title">
+                    <span>关注焦点</span>
+                </div>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+                        <a href="#" style="font-weight: 600; display: block; margin-bottom: 4px;">乌克兰电力基础设施受损评估</a>
+                        <span style="font-size: 0.8rem; color: #666;">能源部门正在紧急抢修...</span>
+                    </li>
+                    <li style="margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+                        <a href="#" style="font-weight: 600; display: block; margin-bottom: 4px;">基辅防空系统拦截数据更新</a>
+                        <span style="font-size: 0.8rem; color: #666;">今日拦截成功率95%...</span>
+                    </li>
+                    <li>
+                        <a href="#" style="font-weight: 600; display: block; margin-bottom: 4px;">居民疏散与避难所分布图</a>
+                        <span style="font-size: 0.8rem; color: #666;">查看最新避难所名单...</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Safety & Facts Section -->
+    <section class="safety-section">
+        <h2 style="font-size: 1.5rem; margin-bottom: 8px;">安全提示与防护指南</h2>
+        <p style="color: var(--text-secondary);">针对近期基辅电视塔附近及全市范围的空袭活动，请居民务必遵守以下安全规范。</p>
+        
+        <div class="safety-grid">
+            <div class="safety-item">
+                <h3>🛡️ 紧急避难所</h3>
+                <p>请熟知居住地最近的防空洞位置。目前基辅市已开放超过200个固定避难所，可通过市政官网查询具体坐标。</p>
+            </div>
+            <div class="safety-item">
+                <h3>⚡ 电力保障</h3>
+                <p>随着关键基础设施受损，电力供应可能不稳定。请储备手电筒、充电宝及必要的应急药品。</p>
+            </div>
+            <div class="safety-item">
+                <h3>📱 信息获取</h3>
+                <p>仅通过官方渠道（如基辅市政府、国防部）获取警报信息，警惕虚假消息传播。</p>
+            </div>
+            <div class="safety-item">
+                <h3>🚑 医疗援助</h3>
+                <p>如遇紧急医疗情况，请拨打112或103急救电话。伤员转运中心已启用临时医疗点。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Grid -->
+    <section>
+        <div class="section-header">
+            <h2 class="section-title">相关报道</h2>
+            <a href="#" style="font-size: 0.9rem; font-weight: 600;">查看全部 &rarr;</a>
+        </div>
+
+        <div class="grid-3">
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/kyiv2/400/250" alt="基辅街道" class="card-img">
+                <div class="card-body">
+                    <span class="card-category">城市动态</span>
+                    <h3 class="card-title"><a href="#">基辅市交通管制措施调整</a></h3>
+                    <p class="card-excerpt">受电视塔附近爆炸事件影响，市中心部分路段实施了临时交通管制，建议市民尽量选择公共交通。</p>
+                    <div class="card-footer">
+                        <span>2小时前</span>
+                        <span>1.2k 阅读</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/kyiv3/400/250" alt="救援现场" class="card-img">
+                <div class="card-body">
+                    <span class="card-category">现场直击</span>
+                    <h3 class="card-title"><a href="#">救援队伍对电视塔进行加固作业</a></h3>
+                    <p class="card-excerpt">虽然塔身结构受损，但基本功能尚存。工程专家正在连夜评估是否需要拆除部分受损天线。</p>
+                    <div class="card-footer">
+                        <span>3小时前</span>
+                        <span>856 阅读</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="article-card">
+                <img src="https://picsum.photos/seed/kyiv4/400/250" alt="电力设施" class="card-img">
+                <div class="card-body">
+                    <span class="card-category">能源</span>
+                    <h3 class="card-title"><a href="#">全国电力负荷高峰预警</a></h3>
+                    <p class="card-excerpt">随着供暖季临近，电力供应面临巨大压力。政府呼吁企业错峰用电，保障居民基本供暖。</p>
+                    <div class="card-footer">
+                        <span>4小时前</span>
+                        <span>2.3k 阅读</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section style="margin-top: 48px;">
+        <div class="section-header">
+            <h2 class="section-title">专家分析</h2>
+        </div>
+        <div class="grid-3">
+            <article class="article-card">
+                <div class="card-body">
+                    <span class="card-category">军事观察</span>
+                    <h3 class="card-title"><a href="#">电视塔作为战略目标的战术意义</a></h3>
+                    <p class="card-excerpt">军事专家指出，控制或破坏关键通信设施是现代冲突中的常见手段，旨在削弱指挥系统。</p>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-body">
+                    <span class="card-category">历史回顾</span>
+                    <h3 class="card-title"><a href="#">基辅电视塔在历史上的遭遇</a></h3>
+                    <p class="card-excerpt">这座地标建筑在二战及多次冲突中均曾受损，其重建与加固过程见证了基辅的发展。</p>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-body">
+                    <span class="card-category">国际视角</span>
+                    <h3 class="card-title"><a href="#">国际组织对基础设施袭击的谴责</a></h3>
+                    <p class="card-excerpt">联合国及多国政府发表声明，强调保护民用基础设施符合国际人道主义法原则。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>冲突观察室</h2>
+                <p>致力于提供客观、及时、准确的冲突资讯与深度分析。我们不站队，只还原事实。</p>
+                <div style="font-size: 0.9rem; color: #888;">© 2023 冲突观察室. All Rights Reserved.</div>
+            </div>
+            <div class="footer-col">
+                <h4>新闻分类</h4>
+                <ul>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">战况地图</a></li>
+                    <li><a href="#">历史档案</a></li>
+                    <li><a href="#">人物专访</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">编辑团队</a></li>
+                    <li><a href="#">投稿指南</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">Twitter / X</a></li>
+                    <li><a href="#">Telegram 频道</a></li>
+                    <li><a href="#">RSS 订阅</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>本网站内容仅供信息参考，不构成任何投资或行动建议。信息来源力求准确，但不对信息的完整性、及时性做出保证。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
