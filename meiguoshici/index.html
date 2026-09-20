@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="美国十次导航 - 专注于美国十次视频在线观看与分享的导航网站。提供高清视频资源分类、热门推荐及快速访问入口，致力于为用户打造安全、便捷的影视导航体验。">
+    <meta name="keywords" content="美国十次导航,美国十次,在线观看,高清视频,导航网站">
+    <title>美国十次导航-高清在线观看与资源分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #e94560;
+            --text-main: #ffffff;
+            --text-secondary: #a0a0a0;
+            --bg-body: #0f0f1a;
+            --bg-card: #1a1a2e;
+            --bg-nav: rgba(26, 26, 46, 0.95);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--bg-nav);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 8px 15px 8px 35px;
+            color: var(--text-main);
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            width: 250px;
+            border-color: var(--accent-color);
+        }
+
+        .search-box::before {
+            content: '🔍';
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(233, 69, 96, 0.1) 0%, rgba(15, 15, 26, 0) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.6);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--text-secondary);
+            color: var(--text-secondary);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Categories Grid */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 4rem;
+        }
+
+        .category-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(233, 69, 96, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-img-placeholder {
+            width: 100%;
+            height: 160px;
+            background-color: #2a2a40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .category-card:hover .card-img-placeholder img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.2rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .tag {
+            background-color: rgba(233, 69, 96, 0.1);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+        }
+
+        /* Quick Access List */
+        .quick-access {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .list-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .list-item:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .list-icon {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .list-info h4 {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .list-info span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .list-arrow {
+            margin-left: auto;
+            color: var(--text-secondary);
+        }
+
+        /* Safety Notice */
+        .notice-section {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(15, 15, 26, 0.9));
+        }
+
+        .notice-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .notice-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0 1.5rem;
+            background-color: #0a0a14;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .search-box input {
+                width: 150px;
+            }
+
+            .search-box input:focus {
+                width: 180px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                🇺🇸 <span>美国十次导航</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#categories">分类</a></li>
+                    <li><a href="#hot">热门推荐</a></li>
+                    <li><a href="#help">帮助中心</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索资源...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索北美优质内容</h1>
+                <p>美国十次导航为您提供精准的资源分类与快速访问入口。汇集高清视频、分类浏览及最新更新资讯，助您轻松找到心仪内容。</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">开始浏览</button>
+                    <button class="btn btn-outline">加入收藏</button>
+                </div>
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>收录资源</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>高清画质</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>在线更新</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="container" id="categories">
+            <h2 class="section-title">热门分类</h2>
+            <div class="grid-layout">
+                <article class="category-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/us1/400/250" alt="高清视频分类">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag">最新</span>
+                            <span>HD高清</span>
+                        </div>
+                        <h3 class="card-title">高清视频专区</h3>
+                        <div class="card-meta">
+                            <span>收录 120+ 链接</span>
+                            <span>每日更新</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/us2/400/250" alt="分类浏览">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag">精选</span>
+                            <span>多标签</span>
+                        </div>
+                        <h3 class="card-title">分类浏览指南</h3>
+                        <div class="card-meta">
+                            <span>按类型筛选</span>
+                            <span>快速导航</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/us3/400/250" alt="热门榜单">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag">热门</span>
+                            <span>Top榜单</span>
+                        </div>
+                        <h3 class="card-title">本周热门榜单</h3>
+                        <div class="card-meta">
+                            <span>实时排行</span>
+                            <span>高人气</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="category-card">
+                    <div class="card-img-placeholder">
+                        <img src="https://picsum.photos/seed/us4/400/250" alt="移动端支持">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag">兼容</span>
+                            <span>全设备</span>
+                        </div>
+                        <h3 class="card-title">移动端适配</h3>
+                        <div class="card-meta">
+                            <span>手机浏览</span>
+                            <span>流畅体验</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Quick Access Section -->
+        <section class="container">
+            <h2 class="section-title">快速访问</h2>
+            <div class="quick-access">
+                <div class="list-group">
+                    <a href="#" class="list-item">
+                        <div class="list-icon">🎥</div>
+                        <div class="list-info">
+                            <h4>高清在线观看</h4>
+                            <span>支持多种播放器，画质清晰流畅</span>
+                        </div>
+                        <div class="list-arrow">➔</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-icon">📂</div>
+                        <div class="list-info">
+                            <h4>分类目录索引</h4>
+                            <span>按标签和类型快速定位资源</span>
+                        </div>
+                        <div class="list-arrow">➔</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-icon">⭐</div>
+                        <div class="list-info">
+                            <h4>收藏夹管理</h4>
+                            <span>自定义您的专属资源列表</span>
+                        </div>
+                        <div class="list-arrow">➔</div>
+                    </a>
+                    <a href="#" class="list-item">
+                        <div class="list-icon">📢</div>
+                        <div class="list-info">
+                            <h4>最新资讯动态</h4>
+                            <span>掌握第一手更新与活动信息</span>
+                        </div>
+                        <div class="list-arrow">➔</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Notice -->
+        <section class="container">
+            <div class="notice-section">
+                <span class="notice-icon">⚠️</span>
+                <h3>访问须知</h3>
+                <p class="notice-text">本站仅提供资源导航与分类索引服务。请广大用户遵守当地法律法规，在合法合规的前提下使用本网站。我们致力于为用户提供安全、干净的浏览环境，拒绝任何违规内容的聚合。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem;">
+                        🇺🇸 <span>美国十次导航</span>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 300px;">
+                        专注于北美优质内容的导航服务，致力于构建安全、高效、便捷的浏览体验。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">网站地图</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">联系站长</a></li>
+                        <li><a href="#">反馈建议</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 美国十次导航. All Rights Reserved.</p>
+                <p style="margin-top: 5px; color: #444;">本站内容仅供学习交流，请勿用于任何商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
